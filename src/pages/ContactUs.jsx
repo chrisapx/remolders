@@ -83,7 +83,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
             <div className="max-w-sm flex flex-col gap-2">
               <div className="flex items-center gap-4">
                 <FaPhone size={14} className="text-blue-600" />
-                <a href='tel:+256761334247' className="text-gray-700">+256 (768) 121-204</a>
+                <a href='tel:+256761334247' className="text-gray-700">+256 (761) 334-247</a>
               </div>
               <div className="flex items-center gap-4">
                 <FaEnvelope size={14} className="text-green-600" />
@@ -91,11 +91,11 @@ const [isSubmitting, setIsSubmitting] = useState(false);
               </div>
               <div className="flex items-center gap-4">
                 <BsWhatsapp size={14} className="text-green-600" />
-                <a href='https://wa.me/+256768121204' className="text-gray-700">+256 (768) 121-204</a>
+                <a href='https://wa.me/+256761334247' className="text-gray-700">+256 (761) 334-247</a>
               </div>
               <div className="flex items-center gap-4">
                 <i size={14} className="text-black pi pi-twitter" />
-                <a href='https://www.x.com/remolders/' className="text-gray-700">@remolders</a>
+                <a href='https://www.x.com/remolders/' className="text-gray-700">@reMolders</a>
               </div>
             </div>
 
@@ -148,7 +148,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
 
               <div className='col-span-2'>
                 <label htmlFor="artist" className="block text-gray-700 mb-2 font-medium">
-                  Coming as
+                  Sending as
                 </label>
                 <select
                   className="px-2 py-3 border rounded-md w-full"

@@ -8,7 +8,7 @@ const AboutUs = () => {
   const team = [
     { name: 'Francis Kusiimwa', image: '', title: 'LX-Designer', description: '' },
     { name: 'Joseph Watema', image: '', title: 'Co-ordinator', description: '' },
-    { name: '?', image: '', title: 'Tutor', description: '' }
+    { name: 'Francis', image: '', title: 'Tutor', description: '' }
   ];
 
   return (

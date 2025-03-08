@@ -27,7 +27,7 @@ const Home = () => {
             Learn & Mold
           </h1>
           <p className="text-lg md:text-2xl max-w-2xl">
-          learning program for teenagers & young adults, aimed at fostering an entrepreneurial spirit, EQ & cultural influence.
+          A learning program for teenagers & young adults, aimed at fostering an entrepreneurial spirit, EQ & cultural influence.
           </p>
           <button 
             onClick={() => setToggleMusicForm(true)}
