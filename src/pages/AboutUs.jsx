@@ -7,7 +7,7 @@ const AboutUs = () => {
   const [toggleMusicForm, setToggleMusicForm] = useState(false);
   const team = [
     { name: 'Francis Kusiimwa', image: '', title: 'LX-Designer', description: '' },
-    { name: 'Joseph Watema', image: 'images/Joseph Watema pic.png', title: 'Co-ordinator', description: '' },
+    { name: 'Joseph Watema', image: '/images/Joseph Watema pic.png', title: 'Co-ordinator', description: '' },
     { name: '?', image: '', title: 'Tutor', description: '' }
   ];
 
