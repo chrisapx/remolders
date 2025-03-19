@@ -123,7 +123,7 @@ const GlobalHeader = () => {
                             <div className='flex items-center gap-3 md:hidden py-4 px-4 gap-6'>
                                 <a href='https://www.x.com/remolders' className='text-black text-lg md:text-lg pi pi-twitter' />
                                 <a href='https://linkedIn.com/company/remolders' className='text-blue-600 text-lg md:text-lg pi pi-linkedin' />
-                                <a href='https://wa.me/+25676133424' className='text-green-600 text-lg md:text-lg pi pi-whatsapp' />
+                                <a href='https://wa.me/+256761334247' className='text-green-600 text-lg md:text-lg pi pi-whatsapp' />
                             </div>
                         </section>
                     </section>

@@ -41,7 +41,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
     setIsSubmitting(true);
     if (!trigger()) return;
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/enquiries`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/enquiries`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(request),
@@ -90,7 +90,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
               </div>
               <div className="flex items-center gap-4">
                 <BsWhatsapp size={14} className="text-green-600" />
-                <a href='https://wa.me/+25676133424' className="text-gray-700">+256 (761) 133-424</a>
+                <a href='https://wa.me/+256761334247' className="text-gray-700">+256 (761) 133-4247</a>
               </div>
               <div className="flex items-center gap-4">
                 <i size={14} className="text-black pi pi-twitter" />
