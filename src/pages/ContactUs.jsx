@@ -68,30 +68,29 @@ const [isSubmitting, setIsSubmitting] = useState(false);
       <section className="pt-8">
         <div className="flex flex-wrap justify-center items-start gap-16 px-8">
 
-          <div className="max-w-sm flex flex-col justify-center items-center gap-2">
+          <div className="max-w-sm flex flex-col justify-center items- gap-2">
             <h2 className="text-2xl font-semibold text-gray-800 text-center">Reach out to us</h2>
             <p className="text-gray-600 mb-8 mt-2 text-center">
-              Have questions, feedback, or want to discuss with us? 
-              Feel free to reach out to us anytime! Whether you're looking for personalized 
-              assistance, or just want to learn more about what we do, we're here to help. 
-              Our team of dedicated professionals is ready to answer all your inquiries and 
-              guide you through the process with care and expertise. Don’t hesitate—let’s make 
-              something extraordinary together!
+              Got questions, feedback, or want to discuss any program-related issue with us? 
+              Feel free to reach out anytime! Whether you're looking for personalized assistance, 
+              or just want to learn more about our offerings, we're here to help. Our dedicated 
+              team is ready to answer all your inquiries and offer guidance where necessary. 
+              Don’t hesitate—together, let’s Learn & Mold!
             </p>
 
 
-            <div className="max-w-sm flex flex-col gap-2">
+            <div className="max-w-sm flex flex-col gap-2 border p-8 rounded-lg bg-black bg-opacity-5">
               <div className="flex items-center gap-4">
                 <FaPhone size={14} className="text-blue-600" />
                 <a href='tel:+256761334247' className="text-gray-700">+256 (761) 334-247</a>
               </div>
               <div className="flex items-center gap-4">
-                <FaEnvelope size={14} className="text-green-600" />
+                <FaEnvelope size={14} className="text-red-300" />
                 <a href='mailto:info@remolders.com' className="text-gray-700">info@remolders.com</a>
               </div>
               <div className="flex items-center gap-4">
                 <BsWhatsapp size={14} className="text-green-600" />
-                <a href='https://wa.me/+256761334247' className="text-gray-700">+256 (761) 334-247</a>
+                <a href='https://wa.me/+25676133424' className="text-gray-700">+256 (761) 133-424</a>
               </div>
               <div className="flex items-center gap-4">
                 <i size={14} className="text-black pi pi-twitter" />
@@ -101,7 +100,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
 
           </div>
 
-          <div className="max-w-md w-full bg-gray-100 p-8 rounded-lg shadow-md">
+          <div className="max-w-md w-full bg-black bg-opacity-5 p-8 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4 text-gray-800">Send Us a Message</h2>
             <form onSubmit={handleSubmit(_handleSubmit)} className="grid grid-cols-2 gap-4">
               <div className='col-span-2'>

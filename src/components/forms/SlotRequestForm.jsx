@@ -1,31 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Dialog } from 'primereact/dialog';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { BsArrowUpRightCircle } from 'react-icons/bs';
 
 const FormSchema = z.object({
   name: z.string().min(1, 'Name is required'),
   email: z.string().min(1, 'Email is required').email('Invalid email format'),
   phone: z.string().min(1, 'Phone number is required'),
   title: z.string().min(1, 'Title is required'),
-  servicePackage: z.string().min(1, 'Service package is required'),
-  serviceCategory: z.string().min(1, 'Service category is required'),
+  selectedPackage: z.string().min(1, 'Service package is required'),
   description: z.string().min(1, 'Description is required'),
 });
 
 const SlotRequestForm = ({ visible, onHide }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const location = useLocation();
+  const isPackagesPage = location.pathname === '/packages';
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     trigger,
-    reset
+    reset,
+    setValue,
   } = useForm({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -33,17 +38,21 @@ const SlotRequestForm = ({ visible, onHide }) => {
       email: "",
       phone: "",
       title: "",
-      servicePackage: "",
-      serviceCategory: "",
+      selectedPackage: searchParams.get("sPackage") || "",
       description: "",
     },    
   });
+
+  useEffect(() => {
+    const sPackage = searchParams.get("sPackage") || "";
+    setValue("selectedPackage", sPackage);
+  }, [searchParams, setValue]);
 
   const _handleSubmit = async (request) => {
     setIsSubmitting(true);
     if (!trigger()) return;
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/service-requests`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/enrollments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(request),
@@ -67,7 +76,7 @@ const SlotRequestForm = ({ visible, onHide }) => {
     <Dialog
       visible={visible}
       onHide={onHide}
-      header="Submit your request"
+      header="Enroll here"
       draggable={false}
       className="w-11/12 md:w-1/2"
       headerClassName='text-center border-b'
@@ -94,40 +103,13 @@ const SlotRequestForm = ({ visible, onHide }) => {
               {...register("title")}
             >
               <option label='In capacity of?' value="" disabled/>
-              <option label='Artist' value="ARTIST"/>
-              <option label='Artist`s team' value="ARTIST_TEAM"/>
-              <option label='Label representative' value="LABEL_REP"/>
+              <option label='Parent or Guardian' value="Parent or Guardian"/>
+              <option label='Learner' value="Learner"/>
+              <option label='School administrator' value="School administrator"/>
+              <option label='Organisation Admin' value="Organisation Admin"/>
             </select>
             {errors.title && <small className="text-red-500">{errors.title.message}</small>}
           </div>
-          <div className='grid'>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id='email'
-              name='email'
-              placeholder="e.g. jdoe@gmail.com"
-              className="px-2 py-3 border rounded-md"
-              {...register("email")}
-            />
-            {errors.email && <small className="text-red-500">{errors.email.message}</small>}
-          </div>
-          
-          <div className='grid'>
-            <label htmlFor="servicePackage">Select service package</label>
-            <select
-              name='servicePackage'
-              className="px-2 py-3 border rounded-md"
-              {...register("servicePackage")}
-            >
-              <option label='Select a Package' value="" disabled/>
-              <option label='Project rollout' value="PROJECT_ROLLOUT"/>
-              <option label='Single release cycle' value="SINGLE_RELEASE_CYCLE"/>
-              <option label='Post release campaign' value="POST_RELEASE_CAMPAIGN"/>
-            </select>
-            {errors.servicePackage && <small className="text-red-500">{errors.servicePackage.message}</small>}
-          </div>
-
           <div className='grid'>
             <label htmlFor="phone">Phone</label>
             <input
@@ -140,19 +122,43 @@ const SlotRequestForm = ({ visible, onHide }) => {
             />
             {errors.phone && <small className="text-red-500">{errors.phone.message}</small>}
           </div>
-          <div className='grid'>
-            <label htmlFor="category">Select service category</label>
+          
+          <div className='relative grid'>
+            <label htmlFor="selectedPackage">Select service package</label>
             <select
-              name='category'
+              name='selectedPackage'
               className="px-2 py-3 border rounded-md"
-              {...register("serviceCategory")}
+              {...register("selectedPackage")}
+              disabled={isPackagesPage} 
             >
-              <option label='Select service category' value="" disabled/>
-              <option label='Digital press' value="DIGITAL_PRESS"/>
-              <option label='Alternative media placement' value="ALTERNATIVE_MEDIA_PLACEMENT"/>
-              <option label='Spotify play listing' value="SPOTIFY_PLAY_LISTING"/>
+              <option label='Select a Package' value="" disabled/>
+              <option label='Holiday learners’ package' value="Holiday learners’ package"/>
+              <option label='Young Adults' value="Young Adults"/>
+              <option label='Organizational package' value="Organizational package"/>
+              <option label='Institutional arrangements' value="Institutional arrangements"/>
             </select>
-            {errors.serviceCategory && <small className="text-red-500">{errors.serviceCategory.message}</small>}
+            {!isPackagesPage && (
+              <small className="text-gray-500 flex items-center mt-2 absolute -bottom-6">
+                Visit packages page for details 
+                <Link to={'/packages'} className='flex items-center text-blue-500 ml-2 gap-2'>
+                  Packages <BsArrowUpRightCircle className=''/>
+                </Link>
+              </small>
+            )}
+            {errors.selectedPackage && <small className="text-red-500">{errors.selectedPackage.message}</small>}
+          </div>
+
+          <div className='grid col-span-2'>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id='email'
+              name='email'
+              placeholder="e.g. jdoe@gmail.com"
+              className="px-2 py-3 border rounded-md"
+              {...register("email")}
+            />
+            {errors.email && <small className="text-red-500">{errors.email.message}</small>}
           </div>
         </section>
         <InputTextarea

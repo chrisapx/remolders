@@ -8,7 +8,7 @@ const Signing = () => {
             <div className='flex items-center md:text-white gap-3'>
               <a href='https://www.x.com/reMolders' className='text-xs md:text-lg pi pi-twitter'/>
               <a href='https://linkedIn.com/company/reMolders' className='text-xs md:text-lg pi pi-linkedin'/>
-              <a href='https://wa.me/+256768121204' className='text-xs md:text-lg pi pi-whatsapp'/>
+              <a href='https://wa.me/+25676133424' className='text-xs md:text-lg pi pi-whatsapp'/>
             </div>
         </div> */}
     </div>

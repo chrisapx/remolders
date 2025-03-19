@@ -16,8 +16,8 @@ const Home = () => {
       /> */}
 
       <img 
-        src="public/glogos/remolders_logo.jpeg" alt="BG Image" 
-        className="top-0 left-0 h-screen w-full object-contain fixed opacityn-90"
+        src="/images/Homepage Pic.jpeg" alt="BG Image" 
+        className="top-0 left-0 h-screen w-full object-cover object-top fixed opacity"
       />
       
       <div className="absolute top-0 left-0 h-full w-full bg-black/50 overflow-scroll">
