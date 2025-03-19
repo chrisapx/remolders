@@ -41,7 +41,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
     setIsSubmitting(true);
     if (!trigger()) return;
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/enquiry-requests`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/enquiries`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(request),
@@ -154,9 +154,10 @@ const [isSubmitting, setIsSubmitting] = useState(false);
                   {...register("title")}
                 >
                   <option label='In capacity of?' value="" disabled/>
-                  <option label='Artist' value="ARTIST"/>
-                  <option label='Artist`s team' value="ARTIST_TEAM"/>
-                  <option label='Label representative' value="LABEL_REP"/>
+                  <option label='Parent or Guardian' value="Parent or Guardian"/>
+                  <option label='Learner' value="Learner"/>
+                  <option label='School administrator' value="School administrator"/>
+                  <option label='Organisation Admin' value="Organisation Admin"/>
                 </select>
                 {errors.title && <small className="text-red-500">{errors.title.message}</small>}
               </div>
