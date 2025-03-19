@@ -86,7 +86,7 @@ const Header = () => {
         visible={toggleMenu}
         position="top"
         onHide={() => setToggleMenu(false)}
-        className='md:hidden h-[28vh]'
+        className='md:hidden h-[40vh]'
         content={({ closeIconRef, hide }) => (
           <section>
             <nav className="flex gap-3 flex-col text-sm font-medium uppercase p-4">

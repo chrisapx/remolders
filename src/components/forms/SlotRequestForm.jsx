@@ -148,7 +148,7 @@ const SlotRequestForm = ({ visible, onHide }) => {
             {errors.selectedPackage && <small className="text-red-500">{errors.selectedPackage.message}</small>}
           </div>
 
-          <div className='grid col-span-2'>
+          <div className='grid md:col-span-2'>
             <label htmlFor="email">Email</label>
             <input
               type="email"

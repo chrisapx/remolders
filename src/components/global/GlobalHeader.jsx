@@ -5,18 +5,16 @@ import { Link, NavLink } from 'react-router-dom';
 
 const GlobalHeader = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
-    const [visibleAboutMenu, setVisibleAboutMenu] = useState(false); // State for desktop dropdown visibility
-    const [visibleMobileAboutMenu, setVisibleMobileAboutMenu] = useState(false); // State for mobile dropdown
-    const dropdownRef = useRef(null); // Ref to track the dropdown element
+    const [visibleAboutMenu, setVisibleAboutMenu] = useState(false);
+    const [visibleMobileAboutMenu, setVisibleMobileAboutMenu] = useState(false);
+    const dropdownRef = useRef(null);
 
-    // Define submenu items for "About Us"
     const aboutUsItems = [
         { label: 'Our Team', to: '/team' },
         { label: 'Curriculum layout', to: '/curriculum' },
         { label: 'Milestones', to: '/milestones' },
     ];
 
-    // Handle click outside to close the dropdown
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -24,12 +22,10 @@ const GlobalHeader = () => {
             }
         };
 
-        // Add event listener when dropdown is visible
         if (visibleAboutMenu) {
             document.addEventListener('mousedown', handleClickOutside);
         }
 
-        // Cleanup event listener
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
@@ -106,8 +102,8 @@ const GlobalHeader = () => {
                                                 to={item.to}
                                                 className={({ isActive }) => `${isActive ? "text-gray-400" : "hover:text-gray-600"}`}
                                                 onClick={() => {
-                                                    hide(); // Close sidebar
-                                                    setVisibleMobileAboutMenu(false); // Close submenu
+                                                    hide();
+                                                    setVisibleMobileAboutMenu(false);
                                                 }}
                                             >
                                                 {item.label}
