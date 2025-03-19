@@ -122,13 +122,16 @@ const Header = () => {
               <NavLink to="/packages" className={({ isActive }) => `${ isActive ? "text-gray-400 rounded-b-2xl border-b-lg" : "hover:text-gray-600"}`}>Packages</NavLink>
               <NavLink to="/contact-us" className={({ isActive }) => `${ isActive ? "text-gray-400 rounded-b-2xl border-b-lg" : "hover:text-gray-600"}`}>Contact Us</NavLink>
             </nav>
-            <hr />
-            <div className='flex items-center gap-3 md:hidden py-4 px-4 gap-6'>
-              <a href='https://www.x.com/remolders' className='text-black text-lg md:text-lg pi pi-twitter'/>
-              <a href='https://linkedIn.com/company/remolders' className='text-blue-600 text-lg md:text-lg pi pi-linkedin'/>
-              <a href='https://wa.me/+25676133424' className='text-green-600 text-lg md:text-lg pi pi-whatsapp'/>
-            </div>
-
+            <section className='absolute flex justify-between items-center px-5 bottom-0 w-full border-t'>
+                <Link to={'/'}>
+                    <img src="/logos/favicon.ico" className='w-8 h-8' alt="Remolders logo" />
+                </Link>
+                <div className='flex items-center gap-3 md:hidden py-4 px-4 gap-6'>
+                    <a href='https://www.x.com/remolders' className='text-black text-lg md:text-lg pi pi-twitter' />
+                    <a href='https://linkedIn.com/company/remolders' className='text-blue-600 text-lg md:text-lg pi pi-linkedin' />
+                    <a href='https://wa.me/+25676133424' className='text-green-600 text-lg md:text-lg pi pi-whatsapp' />
+                </div>
+            </section>
           </section>
         )}
       >

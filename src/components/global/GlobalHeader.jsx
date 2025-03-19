@@ -118,7 +118,7 @@ const GlobalHeader = () => {
                         </nav>
                         <section className='absolute flex justify-between items-center px-5 bottom-0 w-full border-t'>
                             <Link to={'/'}>
-                                <img src="public/logos/favicon.ico" className='w-8 h-8' alt="Remolders logo" />
+                                <img src="/logos/favicon.ico" className='w-8 h-8' alt="Remolders logo" />
                             </Link>
                             <div className='flex items-center gap-3 md:hidden py-4 px-4 gap-6'>
                                 <a href='https://www.x.com/remolders' className='text-black text-lg md:text-lg pi pi-twitter' />
