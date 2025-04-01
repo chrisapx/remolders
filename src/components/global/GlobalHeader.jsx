@@ -33,7 +33,7 @@ const GlobalHeader = () => {
 
     return (
         <>
-            <div className='flex justify-around bg-green-50 items-center p-4 bg-white border-b sticky top-0 z-10'>
+            <div className='flex justify-between px-5 md:px-[10vw] bg-green-50 items-center p-4 bg-white border-b sticky top-0 z-10'>
                 <Link to={'/'} className=''>
                     <img src="/logos/favicon.ico" alt="" className='h-12 w-12' />
                 </Link>

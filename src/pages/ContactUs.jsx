@@ -169,7 +169,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
                 <textarea
                   {...register("description")}
                   id="message"
-                  placeholder="Briefly descibe your service request in a few words"
+                  placeholder="Briefly describe any further specific details regarding the package you would like to undertake..."
                   rows="5"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                 ></textarea>

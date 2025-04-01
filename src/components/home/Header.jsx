@@ -33,7 +33,7 @@ const Header = () => {
       };
   }, [visibleAboutMenu]);
   return (
-    <div className="flex justify-between md:justify-around md:items-center p-4 bg-black bg-opacity-50 sticky w-full top-0 z-10">
+    <div className="flex justify-between px-5 md:px-[10vw] md:items-center p-4 bg-black bg-opacity-50 sticky w-full top-0 z-10">
       <Link to={'/'}>
         <img src="/logos/favicon.ico" alt="" className='h-12 w-12' />
       </Link>

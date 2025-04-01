@@ -163,7 +163,7 @@ const SlotRequestForm = ({ visible, onHide }) => {
         </section>
         <InputTextarea
           name='description'
-          placeholder="Briefly describe the service you want for your music..."
+          placeholder="Briefly describe any further specific details regarding the package you would like to undertake..."
           autoResize
           spellCheck
           rows={2}
