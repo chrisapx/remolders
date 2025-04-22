@@ -76,7 +76,7 @@ const Login = () => {
     <div className='flex justify-center items-center h-screen'>
       <section className='grid items-center h-full md:h-[90%] w-full md:w-[25%] space-y-3 border p-5 bg-gray-100 rounded-md shadow-md'>
         <div className='flex justify-center items-center'>
-            <img src="svgs/favicon.ico" alt="Logo" />
+            <img src="/logos/favicon.ico" alt="Logo" />
         </div>
         <h1 className='text-center text-xl font-bold'>Login as Admin</h1>
 
@@ -118,7 +118,7 @@ const Login = () => {
         <p className='text-xs text-center'>Forgot password? <span className='text-red-500'>Contact support</span></p>
 
         <article className='text-[0.8rem] text-center text-gray-500'>
-            Pioneering a multi-faceted approach to the music PR scene
+        A learning program for teenagers & young adults, aimed at fostering an entrepreneurial spirit, EQ & cultural influence.
         </article>
 
         {success && (

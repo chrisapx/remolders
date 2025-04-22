@@ -112,7 +112,7 @@ const Dashboard = () => {
   return (
     <div>
       <section className='px-4 md:px-16 py-4 flex justify-between items-center border-b'>
-        <p className='text-3xl font-bold opacity-60'>Suave Music PR Dashboard</p>
+        <p className='text-3xl font-bold opacity-60'>Remolders Dashboard</p>
         <Button label='Logout' onClick={handleLogout} className='bg-black text-white px-6 p-2' />
       </section>
 
