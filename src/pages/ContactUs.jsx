@@ -90,7 +90,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
               </div>
               <div className="flex items-center gap-4">
                 <BsWhatsapp size={14} className="text-green-600" />
-                <a href='https://wa.me/+256761334247' className="text-gray-700">+256 (761) 133-4247</a>
+                <a href='https://wa.me/+256761334247' className="text-gray-700">+256 (761) 33-4247</a>
               </div>
               <div className="flex items-center gap-4">
                 <i size={14} className="text-black pi pi-twitter" />
