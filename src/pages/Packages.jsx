@@ -31,7 +31,7 @@ const Packages = () => {
     },
     {
       name: 'Young Adults',
-      description: 'DH but also customizable setting',
+      description: 'Design Hub as well as customizable setting',
       color: 'bg-gradient-to-b hover:bg-gradient-to-t from-green-500 to-green-300',
       icon: <ImManWoman size={40} className="text-green-700" />, 
       image: '/images/Young adults pic.jpeg'
