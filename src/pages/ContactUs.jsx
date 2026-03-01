@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_URL } from '../utils/api';
 import GlobalHeader from '../components/global/GlobalHeader';
 import Signing from '../components/global/Signing';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
@@ -41,7 +42,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
     setIsSubmitting(true);
     if (!trigger()) return;
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/enquiries`, {
+      const response = await fetch(`${API_URL}/enquiries`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(request),
