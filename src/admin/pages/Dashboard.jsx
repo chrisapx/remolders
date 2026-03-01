@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_URL } from '../../utils/api';
 import AetoGrid from '../../utils/AetoGrid';
 import { Button } from 'primereact/button';
 import { getUserToken, isAuthenticated, logout } from '../../utils/hooks/AuthCookiesManager';
@@ -31,10 +32,10 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const [serviceRequestsData, enquiriesData] = await Promise.all([
-          fetch(`${import.meta.env.VITE_API_URL}/api/service-requests?page=${pages.page}&size=${pages.size}`, {
+          fetch(`${API_URL}/service-requests?page=${pages.page}&size=${pages.size}`, {
             headers: { Authorization: `Bearer ${token}` }
           }).then(res => res.json()),
-          fetch(`${import.meta.env.VITE_API_URL}/api/enquiry-requests?page=${pages.page}&size=${pages.size}`, {
+          fetch(`${API_URL}/enquiry-requests?page=${pages.page}&size=${pages.size}`, {
             headers: { Authorization: `Bearer ${token}` }
           }).then(res => res.json())
         ]);
@@ -63,7 +64,7 @@ const Dashboard = () => {
   const handleResolve = async (requestId) => {
     setIsResolving(true);
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}${selectedTab === 'service-requests' ? '/api/service-requests?srId=' : '/api/enquiry-requests?eqId=' + requestId}`, {
+      const response = await fetch(`${API_URL}${selectedTab === 'service-requests' ? '/service-requests?srId=' + requestId : '/enquiry-requests?eqId=' + requestId}`, {
           headers: { 
             Authorization: `Bearer ${token}` 
           }

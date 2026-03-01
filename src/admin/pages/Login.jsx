@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { API_URL } from '../../utils/api';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -34,7 +35,7 @@ const Login = () => {
         if (!trigger()) return;
         setLoading(true);
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/users/login`, {
+            const response = await fetch(`${API_URL}/users/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ username: request.email, password: request.password }),
