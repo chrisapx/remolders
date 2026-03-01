@@ -86,7 +86,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
               </div>
               <div className="flex items-center gap-4">
                 <FaEnvelope size={14} className="text-red-300" />
-                <a href='mailto:info@remolders.com' className="text-gray-700">info@remolders.com</a>
+                <a href='mailto:remolders.edu@gmail.com' className="text-gray-700">remolders.edu@gmail.com</a>
               </div>
               <div className="flex items-center gap-4">
                 <BsWhatsapp size={14} className="text-green-600" />
