@@ -7,11 +7,12 @@ const Team = () => {
   const [toggleMusicForm, setToggleMusicForm] = useState(false);
   const team = [
     { name: 'Francis Kusiimwa', image: '/images/Francis Kusiimwa team pic.jpg', title: 'LX-Designer', description: '' },
-    { name: 'Joseph Watema', image: '/images/Joseph Watema team pic.png', title: 'Co-ordinator', description: '' },
+    { name: 'Joe M. Watema', image: '/images/Joseph Watema team pic.png', title: 'Co-Lead', description: '' },
+    { name: 'Tandeka Mutebi', image: '/images/Tandeka Mutebi team pic.jpg', title: 'Co-Lead', description: '' },
   ];
 
   return (
-    <div className="relative h-screen overflow-auto">
+    <div className="relative min-h-screen pb-16">
       <GlobalHeader />
 
       <div className='text-center border-b'>
@@ -46,7 +47,7 @@ const Team = () => {
         </div>
       </section>
 
-      <div className="md:absolute w-full">
+      <div className="fixed bottom-0 w-full">
         <Signing />
       </div>
 
