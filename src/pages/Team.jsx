@@ -8,7 +8,7 @@ const Team = () => {
   const team = [
     { name: 'Francis Kusiimwa', image: '/images/Francis Kusiimwa team pic.jpg', title: 'LX-Designer', description: '' },
     { name: 'Joe M. Watema', image: '/images/Joseph Watema team pic.png', title: 'Co-Lead', description: '' },
-    { name: 'Tandeka Mutebi', image: 'https://github.com/user-attachments/assets/43fffba3-a862-45a3-9e63-908833d45461', title: 'Co-Lead', description: '' },
+    { name: 'Tandeka Mutebi', image: '/images/Tandeka Mutebi team pic.jpg', title: 'Co-Lead', description: '' },
   ];
 
   return (
